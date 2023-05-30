@@ -1,0 +1,79 @@
+@import '../index.less';
+
+.@{prefix}-descriptions {
+  &-border {
+    .@{prefix}-descriptions-content {
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      border: 1px solid @dividerColor;
+      border-left: 0;
+      border-bottom: 0;
+    }
+
+    .descriptions-tbody > tr {
+      > th {
+        flex: 0 0 120px;
+        padding: 12px 12px;
+        width: 120px;
+        font-size: 12px;
+        color: @auxiliaryTextColor;
+        line-height: 16px;
+        background: @mainackgroundColor;
+        border-top: 0;
+        text-align: left;
+        border-bottom: 1px solid @dividerColor;
+        border-right: 1px solid @dividerColor;
+        border-left: 1px solid @dividerColor;
+        color: @textColor;
+        font-weight: normal;
+        &:after {
+          content: '：';
+        }
+      }
+
+      > td {
+        padding: 12px 12px;
+        font-size: 12px;
+        color: @secondaryTextColor;
+        line-height: 16px;
+        background: #fff;
+        border-bottom: 1px solid @tableHeadBackgroundColor;
+        color: @textColor;
+        word-break: break-all;
+        overflow: hidden;
+      }
+    }
+  }
+  &-title {
+    font-size: 14px;
+    color: @auxiliaryTextColor;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+  &-item {
+    height: 100%;
+    display: flex;
+    // margin-bottom: 16px;
+    &-label {
+      font-size: 12px;
+      color: @auxiliaryTextColor;
+      line-height: 17px;
+      height: 100%;
+      &:after {
+        content: '：';
+      }
+    }
+
+    &-content {
+      height: 100%;
+      flex: 1;
+      padding-left: 2px;
+      font-size: 12px;
+      color: @secondaryTextColor;
+      line-height: 17px;
+    }
+  }
+}

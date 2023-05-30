@@ -1,0 +1,252 @@
+@import '../index.less';
+
+.@{prefix}-t {
+}
+
+.@{prefix}-upload {
+  &-default {
+  }
+
+  &-disabled {
+  }
+
+  &-text {
+  }
+
+  &-picture {
+  }
+
+  &-picture-img {
+  }
+
+  &-drag {
+    .@{prefix}-upload-input {
+      width: 426px;
+      height: 200px;
+      background: #ffffff;
+      border-radius: 4px;
+      border: 1px solid @borderColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+
+      &:hover,
+      &.highlighted {
+        border: 1px dashed @primaryColor;
+      }
+    }
+
+    &-info {
+      font-size: 16px;
+      color: @textColor;
+      line-height: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  &-picture-card {
+    .@{prefix}-upload-target {
+      display: none;
+    }
+
+    .@{prefix}-upload-uploadList {
+      display: flex;
+      flex-wrap: wrap;
+
+      .@{prefix}-upload-progress {
+        top: 0%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        background: rgba(0, 0, 0, 0.5);
+
+        .@{prefix}-progress {
+          flex: 1;
+
+          &-outer {
+            margin: 0;
+          }
+        }
+      }
+
+      .@{prefix}-upload-item {
+        min-width: 104px;
+        height: 104px;
+        background: @tableHeadBackgroundColor;
+        border-radius: 2px;
+        border: 1px solid @borderColor;
+        margin-right: 23px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &-context {
+          height: 100%;
+          position: relative;
+          z-index: 1;
+        }
+
+        &-add {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          p {
+            margin-top: 12px;
+            font-size: 14px;
+            color: @textColor;
+            line-height: 1em;
+            text-align: center;
+          }
+        }
+
+        .@{prefix}-upload-fillName {
+          display: none;
+        }
+
+        &:hover {
+          border: 1px dashed @primaryColor;
+
+          .@{prefix}-upload-item-operation {
+            display: flex;
+            fill: #fff;
+          }
+        }
+
+        &-error {
+          border: 1px dashed @errorColor;
+        }
+
+        &-operation {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 9;
+          margin: 0;
+          align-items: center;
+          justify-content: center;
+          display: none;
+
+          background: rgba(0, 0, 0, 0.5);
+
+          span {
+            margin: 0 8px;
+          }
+        }
+
+        .@{prefix}-upload-picture-img {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          // overflow: hidden;
+        }
+      }
+    }
+  }
+
+  &-input {
+    display: inline-block;
+    transition: all 0.3s;
+    width: 100%;
+
+    &.highlighted {
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  &-accept {
+    margin-top: 8px;
+    font-size: 14px;
+    color: @auxiliaryTextColor;
+    line-height: 20px;
+    word-break: keep-all;
+  }
+
+  &-uploadList {
+    margin-top: 8px;
+  }
+
+  &-item {
+    position: relative;
+    height: 40px;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &-context {
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .@{prefix}-upload-picture-img {
+      width: 40px;
+      height: 40px;
+      margin: 0 8px;
+      // overflow: hidden;
+    }
+
+    &:hover {
+      background: @tableItemHoverBackgroundColor;
+    }
+
+    &-error {
+    }
+
+    &-success {
+    }
+
+    &-done {
+    }
+
+    &-uploading {
+    }
+
+    &-removed {
+    }
+
+    &-operation {
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &-icon {
+    padding: 0 8px;
+  }
+
+  &-fillName {
+    flex: 1;
+    font-size: 14px;
+    color: @auxiliaryTextColor;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+  }
+
+  &-progress {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 32px;
+  }
+}

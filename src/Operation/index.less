@@ -1,0 +1,79 @@
+@import '../index.less';
+
+.@{prefix}-operation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .@{prefix}-popconfirm-target {
+    &:not(.@{prefix}-operation-item) {
+      // margin-left: -12px;
+      // padding: 0 12px;
+    }
+  }
+
+  &-poop {
+  }
+
+  & > &-item {
+    font-size: 12px;
+    font-weight: 500;
+    color: @primaryColor;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &-disabled {
+      color: @disableColor;
+      cursor: no-drop;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &-more {
+      margin-top: -0.5em;
+    }
+  }
+  .line {
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: @dividerColor;
+    margin: 0 12px;
+    &:last-child {
+      display: none;
+    }
+  }
+
+  &-popover {
+    margin: -16px;
+    padding: 2px 0;
+
+    .@{prefix}-operation-item {
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 400;
+      color: @textColor;
+      line-height: 32px;
+      padding: 0 12px;
+      white-space: nowrap;
+      &-disabled {
+        color: @disableColor;
+        cursor: no-drop;
+      }
+      &-select {
+        background: @tableItemSelectBackgroundColor;
+      }
+      &:not(.@{prefix}-operation-item-disabled):not(.@{prefix}-operation-item-select):hover {
+        height: 32px;
+        background: @tableItemHoverBackgroundColor;
+      }
+    }
+  }
+}

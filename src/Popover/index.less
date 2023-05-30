@@ -1,0 +1,161 @@
+@import '../index.less';
+
+.@{prefix}-popover-warp {
+}
+
+.@{prefix}-popover-target {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.@{prefix}-popup {
+  &-top {
+    .@{prefix}-popover {
+      &:after {
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &-top-left {
+    .@{prefix}-popover {
+      &:after {
+        right: auto;
+        left: 16px;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &-top-right {
+    .@{prefix}-popover {
+      &:after {
+        left: auto;
+        right: 16px;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &-left {
+    .@{prefix}-popover {
+      &:after {
+        left: auto;
+        top: 50%;
+        margin-top: -5px;
+        right: -10px;
+        border-right: 5px solid transparent;
+        border-left: 5px solid #fff;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+      }
+    }
+  }
+
+  &-right {
+    .@{prefix}-popover {
+      &:after {
+        right: auto;
+        top: 50%;
+        margin-top: -5px;
+        left: -5px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid #fff;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &-bottom {
+    .@{prefix}-popover {
+      &:after {
+        top: -5px;
+        margin-top: -5px;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #fff;
+        border-left: 5px solid transparent;
+        border-top: 5px solid transparent;
+        filter: drop-shadow(2px -2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &-bottom-left {
+    .@{prefix}-popover {
+      &:after {
+        right: auto;
+        left: 16px;
+        top: -5px;
+        margin-top: -5px;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #fff;
+        border-left: 5px solid transparent;
+        border-top: 5px solid transparent;
+
+        filter: drop-shadow(2px -2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &-bottom-right {
+    .@{prefix}-popover {
+      &:after {
+        left: auto;
+        right: 16px;
+        top: -5px;
+        margin-top: -5px;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #fff;
+        border-left: 5px solid transparent;
+        border-top: 5px solid transparent;
+
+        filter: drop-shadow(2px -2px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+}
+
+.@{prefix}-popover {
+  position: relative;
+  z-index: 10;
+  background: #ffffff;
+  box-shadow: @shadowdefaultHover;
+  border-radius: 2px;
+
+  &:after {
+    position: absolute;
+    left: 50%;
+    content: '';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    transform: translate(-50%, 0);
+  }
+
+  &-mask {
+    // position: fixed;
+    // z-index: 1;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
+  }
+
+  &-body {
+    padding: 16px;
+  }
+
+  &-footer {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+
+    & > * {
+      margin-left: 16px;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@import '../index.less';
+
+.@{prefix}-transfer {
+  display: flex;
+  height: 332px;
+
+  .@{prefix}-table {
+    border-right: 0 !important;
+    box-sizing: content-box;
+    tr {
+      td:first-child,
+      th:first-child {
+        border-left: 0 !important;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 14px;
+    color: @textColor;
+    line-height: 1em;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 8px;
+    border-bottom: 1px solid #f0f1f5;
+  }
+
+  &-search {
+    .@{prefix}-input {
+      border-left: 0;
+      border-top: 0;
+      border-right: 0;
+      border-radius: 0;
+      border-color: #f0f1f5;
+    }
+  }
+
+  &-container {
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid @borderColor;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-checkbox {
+    flex: 1;
+    overflow: auto;
+
+    .@{prefix}-trees {
+      margin: 0 8px;
+    }
+  }
+
+  &-checkbox {
+    flex: 1;
+    overflow-y: auto;
+
+    .@{prefix}-checkbox-group {
+      display: flex;
+      flex-direction: column;
+
+      .@{prefix}-checkbox {
+        margin: 0 8px;
+      }
+    }
+  }
+
+  &-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid @borderColor;
+  }
+
+  &-operation {
+    width: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-item {
+      cursor: pointer;
+      margin: 8px 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+
+      background: @primaryColor;
+      color: #fff;
+
+      &-disabled {
+        cursor: not-allowed;
+        background: #ffffff;
+        border-radius: 2px;
+        border: 1px solid @borderColor;
+      }
+    }
+  }
+
+  &-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid @borderColor;
+  }
+
+  &-allCheckbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+
+  &-allCheckbox-cotnent {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    .num {
+      white-space: nowrap;
+      font-size: 14px;
+      color: @auxiliaryTextColor;
+      margin-left: 6px;
+    }
+  }
+
+  &-invertSelection {
+    font-size: 14px;
+    color: @primaryColor;
+    cursor: pointer;
+  }
+
+  &-noData {
+    .@{prefix}-transfer-invertSelection {
+      color: @disableColor;
+      cursor: not-allowed;
+    }
+  }
+}

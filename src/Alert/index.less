@@ -1,0 +1,110 @@
+@import '../index.less';
+
+.@{prefix}-alert {
+  padding: 13px 17px;
+  background: #ffffff;
+  border-radius: 2px;
+  border: 1px solid @borderColor;
+  width: auto;
+  display: flex;
+  position: relative;
+  &-closed {
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+
+  &-lg {
+    padding: 18px 26px;
+  }
+
+  &&-primary {
+    border-color: @primaryColor;
+  }
+
+  &&-primary &-alert-head {
+    svg {
+      color: @primaryColor;
+    }
+  }
+
+  &&-success {
+    border-color: @successColor;
+  }
+
+  &&-success &-alert-head {
+    svg {
+      color: @successColor;
+    }
+  }
+
+  &&-warning {
+    border-color: @warningColor;
+  }
+
+  &&-warning &-alert-head {
+    svg {
+      color: @warningColor;
+    }
+  }
+
+  &&-error {
+    border-color: @errorColor;
+  }
+
+  &&-error &-alert-head {
+    svg {
+      color: @errorColor;
+    }
+  }
+
+  &-head {
+    line-height: 1em;
+    display: block;
+    margin-right: 8px;
+  }
+
+  &-body {
+    flex: 1;
+    overflow-x: hidden;
+  }
+
+  &-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: @textColor;
+    line-height: 1em;
+    margin-bottom: 16px;
+  }
+
+  &-content {
+    font-size: 14px;
+    color: @textColor;
+    line-height: 16px;
+    height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-footer {
+    font-size: 14px;
+    color: @textColor;
+    line-height: 16px;
+    height: 16px;
+  }
+
+  &-close {
+    color: #000000;
+    position: absolute;
+    right: 16px;
+    top: 13px;
+    cursor: pointer;
+    line-height: 1em;
+    svg {
+      display: block;
+    }
+  }
+  &-close + &-footer {
+    margin-right: 20px;
+  }
+}

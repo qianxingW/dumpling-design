@@ -1,0 +1,150 @@
+@import '../index.less';
+
+.@{prefix}-button {
+  width: auto;
+  border-radius: 4px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  white-space: nowrap;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .@{prefix}-icon {
+    margin-right: 5px;
+    margin-left: -3px;
+  }
+
+  span {
+    line-height: 16px;
+  }
+
+  &&-default {
+    background: #fff;
+    border-color: @borderColor;
+    color: @fullDarkColor;
+
+    &:hover {
+      border-color: @primaryColorHover;
+      color: @primaryColorHover;
+      fill: @primaryColorHover;
+    }
+  }
+
+  &&-primary {
+    color: #fff;
+    fill: #fff;
+    background: @primaryColor;
+    border-color: @primaryColor;
+
+    &:hover {
+      color: #fff;
+      background: @primaryColorHover;
+      fill: #fff;
+    }
+
+    &.@{prefix}-button-disabled {
+      background: @primaryColor;
+      color: #ffff;
+      fill: @primaryColor;
+      opacity: 0.5;
+
+      .@{prefix}-spin {
+        &-dot {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .@{prefix}-spin {
+      &-dot {
+        &-item {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &&-dashed {
+    background: #fff;
+    border-style: dashed;
+    border-color: @borderColor;
+
+    &:hover {
+      border-color: @primaryColorHover;
+      color: @primaryColorHover;
+      fill: @primaryColorHover;
+    }
+  }
+
+  &&-text {
+    background: none;
+    border: 0;
+
+    &:hover {
+      border-color: @primaryColorHover;
+      color: @primaryColorHover;
+      fill: @primaryColorHover;
+    }
+  }
+
+  &&-link {
+    background: none;
+    border: 0;
+    color: @primaryColor;
+    fill: @primaryColor;
+
+    &:hover {
+      border-color: @primaryColorHover;
+      color: @primaryColorHover;
+      fill: @primaryColorHover;
+    }
+  }
+
+  &&-disabled {
+    cursor: not-allowed;
+
+    background: @fullDisableColor;
+    color: @disableColor;
+    fill: @disableColor;
+    .@{prefix}-spin {
+      &-dot {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &&-lg {
+    padding: 10px 16px;
+  }
+
+  &&-sm {
+    padding: 4px 16px;
+    font-size: 12px;
+  }
+
+  &&-inline {
+  }
+
+  .@{prefix}-spin {
+    width: 16px;
+    height: 16px;
+    // padding-right: 20px;
+    margin-left: -10px;
+    transform: scale(0.6);
+    margin-right: 4px;
+
+    & + .@{prefix}-icon {
+      margin-left: 0px;
+    }
+
+    &-dot {
+      margin-top: -10px;
+    }
+  }
+}
