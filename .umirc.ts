@@ -9,4 +9,6 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
+  base: '/dumpling-design/',
+  publicPath: '/dumpling-design/',
 });
